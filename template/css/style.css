@@ -381,11 +381,18 @@ body {
   box-sizing: border-box;
 }
 
+.reset {
+  margin-left: 47%;
+  margin-top: 10%;
+}
+
 /*set container to 512px*/
 .container {
+  margin-left: 38%;
+  margin-top: 2%;
   width: 516px;
   height: 516px;
-  border: 2px solid red;
+  border: 2px solid black;
   font-size: 0; /*this removes the gaps between the divs*/
 }
 
@@ -393,7 +400,7 @@ body {
   display: inline-block;
   width: 32px;
   height: 32px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 /******************************************
 /* LAYOUT
