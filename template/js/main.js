@@ -2,11 +2,10 @@
 const container = document.querySelector('.container');
 
 
-//Creating individual square div 32px
-const squareDiv = document.createElement('div');
-squareDiv.style.width = '32px';
-squareDiv.style.height = '32px';
-squareDiv.style.border = '2px solid red';
-
-// append squareDiv as child to .container
-container.appendChild(squareDiv);
+//Create 256 square divs
+//Append squareDivs as child to .container
+for(let i = 0; i < 256; i++) {
+  let squareDiv = document.createElement('div');
+  squareDiv.className = 'squareDiv';
+  container.appendChild(squareDiv);
+}
