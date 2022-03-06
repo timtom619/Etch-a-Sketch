@@ -1,16 +1,19 @@
-//Make container 512px
 const container = document.querySelector('.container');
-// let arrayContainer;
 let list;
-//Create 256 square divs
-//Append squareDivs as child to .container
 
+// set grid size based on userInput newGridDimensions * newGridDimensions
+// squares should change size dynamically 500/ userInput
 function createGrid(gridSize) {
-  for(let i = 0; i < (gridSize * gridSize); i++) { // rethink this conditional 
+    container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+
+  for(let i = 0; i < (gridSize * gridSize); i++) {  
     let squareDiv = document.createElement('div');
     squareDiv.className = 'squareDiv';
     container.appendChild(squareDiv);
-  
+    squareDiv.style.width = 500 / gridSize;
+    squareDiv.style.height = 500 / gridSize;
+   
     // Give each div element a mouseover event w/grey background change
     squareDiv.addEventListener('mouseover', () => {
       squareDiv.style.backgroundColor = 'grey';
@@ -20,13 +23,8 @@ function createGrid(gridSize) {
   list = document.querySelectorAll('.squareDiv');
 }
 
-createGrid(256);
-
-// Add a button to the top of the screen which will clear the current grid and send the user a popup asking for the number of squares per side for the new grid. Once entered, the new grid should be generated in the same total space as before (e.g. 960px wide) so that you’ve got a new sketch pad. Tip: Set the limit for the user input to a maximum of 100. A larger number of squares results in more computer resources being used, potentially causing delays, freezing, or crashing that we want to prevent.
-
-// Research button tags in HTML and how you can make a JavaScript function run when one is clicked.
-// Also check out prompts.
-// You should be able to enter 64 and have a brand new 64x64 grid pop up without changing the total amount of pixels used.
+//Default Start 16x16 grid
+createGrid(16);
 
 let newGridDimensions = 0;
 
